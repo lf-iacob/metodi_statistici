@@ -34,10 +34,11 @@ int main(int argc, char** argv) {
     TApplication app("app", &argc, argv);
     TCanvas* c1 = new TCanvas("c1", "Canvas", 800, 600);
     TH1D* h1 = new TH1D("h1", "Random variables - pdf", 100, 0, 9);
-    for (double x : vx) {
+    for (double x : vx)
         h1->Fill(x);
-    }
-    h1->GetXaxis()->SetTitle("X");
+    //pdf hypothesis: gaussian distribution
+    h1->Fit("gaus");
+    h1->GetXaxis()->SetTitle("x");
     h1->GetYaxis()->SetTitle("Counts");
     h1->Draw();
     app.Run();
