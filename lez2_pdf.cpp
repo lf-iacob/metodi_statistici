@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
     TApplication app("app", &argc, argv);
     TCanvas* c1 = new TCanvas("c1", "Canvas", 800, 600);
     TH1D* h1 = new TH1D("h1", "Random variables - pdf", 100, 0, 9);
+    h1->Sumw2();
     for (double x : vx)
         h1->Fill(x);
     //pdf hypothesis: gaussian distribution
