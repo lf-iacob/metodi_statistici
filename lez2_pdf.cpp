@@ -51,6 +51,14 @@ int main(int argc, char** argv) {
 
 
 
+/* TO OPEN FROM TERMINAL
+Create file emacs with the script with ".cpp" extention: lez2_gauss_data.cpp.
+Compile with command "g++ lez2_gauss_data.cpp -o lez2_es `root-config --cflags --libs`".
+Now the program is called "lez2_es", so you run it with "./lez2_es".
+*/
+
+
+
 
 
 
