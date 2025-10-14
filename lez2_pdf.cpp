@@ -34,9 +34,10 @@ int main(int argc, char** argv) {
     TApplication app("app", &argc, argv);
     TCanvas* c1 = new TCanvas("c1", "Canvas", 800, 600);
     TH1D* h1 = new TH1D("h1", "Random variables - pdf", 100, 0, 9);
-    //h1->Sumw2(); //Poisson error
+    //h1->Sumw2(); //Poisson error only
     for (double x : vx)
         h1->Fill(x);
+    h1->Scale(1./h1->Integral(), "width"); //Normalized (before fit) + Poisson error
     //pdf hypothesis: gaussian distribution
     h1->Fit("gaus");
     h1->GetXaxis()->SetTitle("x");
