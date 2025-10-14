@@ -79,3 +79,12 @@ void get_pdf(const char* file_name) {
   cout<<"PDF I: Mean="<<pdf_I->GetParameter(1)<<"±"<<pdf_I->GetParError(1)<<", Sigma="<<pdf_I->GetParameter(2)<<"±"<<pdf_I->GetParError(2)<<", Const="<<pdf_I->GetParameter(0)<<"±"<<pdf_I->GetParError(0)/integrale<<endl;
   cout<<"PDF II: Mean="<<pdf_II->GetParameter(1)<<"±"<<pdf_II->GetParError(1)<<", Sigma="<<pdf_II->GetParameter(2)<<"±"<<pdf_II->GetParError(2)<<", Const="<<pdf_II->GetParameter(0)<<"±"<<pdf_II->GetParError(0)<<endl;
 }
+
+
+
+/* HOW TO OPEN FROM TERMINAL
+Create file emacs with the script with ".C" extention: lez2_soluzione.C.
+Open root with command "root".
+Write command ".L lez2_soluzione.C": .L is a command used to load a C++ macro file into the ROOT session, making all the functions and procedures defined in that file available to be called at the ROOT prompt.
+Use the function with command "get_pdf("gaus_data.txt")".
+*/
