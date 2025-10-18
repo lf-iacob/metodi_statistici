@@ -1,3 +1,5 @@
+// SOLUZIONE proposta dalla prof
+
 #include "TH1F.h"
 #include "TH2F.h"
 #include "TVector.h"
@@ -48,11 +50,12 @@ void readData(){
   }
 
     TCanvas *c = new TCanvas();
-    //    h2->Draw("colz"); // colz è per mostrare le entries in ogni bin con diversi colori
-    h2->Draw("lego"); // colz è per mostrare le entries in ogni bin con diversi colori
+    h2->Draw("colz"); // colz è per mostrare le entries in ogni bin con diversi colori
+
+    TCanvas *c2 = new TCanvas();
+    h2->Draw("lego"); 
     
     TCanvas *c3 = new TCanvas();
-    hxy->Draw();
 
     Float_t sigma_x = sqrt((Float_t)rms_x/(Float_t)T->GetEntries());
     Float_t sigma_y = sqrt((Float_t)rms_y/(Float_t)T->GetEntries());
@@ -94,3 +97,4 @@ void readData(){
     h2_rot->Draw("colz");
     
 }
+
