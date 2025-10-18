@@ -173,3 +173,12 @@ void decorrelate(const char* file_name){
   cout << "File hist_file.root salvato con successo." << endl;
   
 }
+
+
+/* HOW TO OPEN FROM TERMINAL
+Create file emacs with the script with ".C" extention: lez4_correl.C.
+Open root with command "root".
+Write command ".L lez4_correl.C" to load macro file.
+Use the function with command "decorrelate("data_correlated.txt")".
+Write "new TBrowser" to open the tree structure saved thanks to the TFile. Click on the plots of the data.
+*/
