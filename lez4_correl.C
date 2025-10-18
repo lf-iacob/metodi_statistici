@@ -80,7 +80,7 @@ void decorrelate(const char* file_name){
   
   //---- DECORRELATION
   double theta = 0.5*atan((2*cov)/(xstd*xstd-ystd*ystd));
-  cout<<"Theta correlation angle: "<<theta<<endl;
+  cout<<"Theta correlation angle: "<<theta<<"rad, "<<theta*180./TMath::Pi()<<"°"<<endl;
 
   double z,w;
   
