@@ -170,7 +170,22 @@ void decorrelate(const char* file_name){
   c3->Write();
 
   hist_file->Close();
-  cout << "File hist_file.root salvato con successo." << endl;
+
+  /* //---- PDF (alternativa al TFile)
+  c1->GetPad(1)->SetBottomMargin(0.15);
+  c1->GetPad(2)->SetBottomMargin(0.15);
+  c1->GetPad(3)->SetBottomMargin(0.15);
+  c2->GetPad(1)->SetBottomMargin(0.15);
+  c2->GetPad(2)->SetBottomMargin(0.15);
+  c2->GetPad(3)->SetBottomMargin(0.15);
+  c3->GetPad(1)->SetBottomMargin(0.15);
+  c3->GetPad(2)->SetBottomMargin(0.15);
+  c1->Print("file_pdf.pdf[");
+  c1->Print("file_pdf.pdf");
+  c2->Print("file_pdf.pdf");
+  c3->Print("file_pdf.pdf");
+  c3->Print("file_pdf.pdf]");
+  */
   
 }
 
