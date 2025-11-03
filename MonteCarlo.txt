@@ -1,0 +1,36 @@
+
+In fisica è spesso impossibile ricostruire a livello computazionale l'avvenire di
+un certo fenomemno impiegando le equazioni analitiche che lo descrivono in modo
+da tenere conto di tutti i possibili effetti coinvolti. Ad esempio, si immagini 
+di voler studiare stimare l'efficienza di un certo rivelatore simulando l'inte-
+razione delle particelle con esso; si dovrebbe tener conto di una miriade di fat-
+tori di cui magari non si è nemmeno a conoscenza esatta a livello teorico.
+Per questo motivo, quello che spesso viene fatto consiste nell'impiegare delle 
+tecniche di calcolo che ricostruiscono una certa popolazione corrispondente ad 
+un evento fisico facendo uso di numeri pseudo-casuali che simulino il fenomeno, 
+ben descritto dai parametri caratterizzanti la distribuzione in output.
+
+Es. So che il beam è in grado di produrre un fascio di particelle con una certa
+energia distribuite secondo una certa pdf. Impiegando un'efficienza del detecor
+che le rileva pari al tot%, si tiene conto della geometria e di altre caratteri-
+stiche note della strumentazione. Impostando queste come ipotesi di partenza per
+generare i numeri psudo-casuali, si applicano al sistema delle semplici leggi 
+analitiche per far evolvere l'input simulato secondo il fenomeno in studio e si
+estraggono in output delle distribuzioni risultanti che corrispondono a come ci
+si aspetta che a livello sperimentale si comporti in effetti il rivelatore.
+
+Le diverse tecniche che possono essere impiegate per simulare un campione di una
+specifica popolazione mediante numeri pseudo-random prendono il nome di *metodi
+Monte Carlo*.
+
+The logic steps of a Monte Carlo approach:
+1. Define the process under study: choose the p.d.f which describes the population;
+2. Generate a random sample of the hypothetical population using a random sequence of
+numbers;
+3. Make a statistical estimation of the parameter under study from the random sample.
+To generate a set of pseudo-random numbers x1,x2,…xn, distributed as the p.d.f. of
+our choice, different techniques, with different pros and cons are available:
+✓ Inverse Transformation method;
+✓ Weighted events:
+✓ Rejection method (Von Neumann);
+✓ Composite method.
