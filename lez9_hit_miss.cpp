@@ -30,7 +30,7 @@ void hit_miss(){
   vector<double> f;
   double y_max=0;
   for(int i=0; i<N; i++){
-    y_i=3*x[i]+5;    // espressione analitica della pdf generanda
+    y_i=sin(x[i]);    // espressione analitica della pdf generanda
     f.push_back(y_i);
     if(y_i>y_max)
       y_max=y_i;
@@ -71,20 +71,20 @@ void hit_miss(){
   
   TGraph *p_fun = new TGraph(N, &x[0], &f[0]);
   p_fun->SetTitle("Function;x;f(x)");
-  p_fun->SetLineColor(kPink+8);
+  p_fun->SetMarkerColor(kPink+8);
+  p_fun->SetMarkerSize(1.3);
 
   TCanvas *c = new TCanvas();
   c->Divide(2,2);
   c->cd(1);
-  p_fun->Draw("AL");
+  p_fun->Draw("AP");
   c->cd(2);
   p_rand->Draw("AP");
   c->cd(3);
   p_pdf->Draw("AP");
   c->cd(4);
-  p_rand->SetTitle("Results;x;counts"); 
   p_rand->Draw("AP");
   p_pdf->Draw("P SAME");
-  p_fun->Draw("L SAME");
-  
+  p_fun->Draw("P SAME");
+
 }
