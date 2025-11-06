@@ -5,6 +5,7 @@
 #include <TRandom3.h>
 #include <TGraph.h>
 #include <TCanvas.h>
+#include <TH1F.h>
 using namespace std;
 const int N=10000; //#dati generati
 
@@ -30,7 +31,7 @@ void hit_miss(){
   vector<double> f;
   double y_max=0;
   for(int i=0; i<N; i++){
-    y_i=sin(x[i]);    // espressione analitica della pdf generanda
+    y_i=3*x[i]+2;    // espressione analitica della pdf generanda
     f.push_back(y_i);
     if(y_i>y_max)
       y_max=y_i;
@@ -74,7 +75,7 @@ void hit_miss(){
   p_fun->SetMarkerColor(kPink+8);
   p_fun->SetMarkerSize(1.3);
 
-  TCanvas *c = new TCanvas();
+  TCanvas *c = new TCanvas("c", "c");
   c->Divide(2,2);
   c->cd(1);
   p_fun->Draw("AP");
@@ -86,5 +87,14 @@ void hit_miss(){
   p_rand->Draw("AP");
   p_pdf->Draw("P SAME");
   p_fun->Draw("P SAME");
+
+  
+  TH1F *h = new TH1F("h", "Istogramma;x;counts", 100, x_min, x_max);
+  for(int i=0; i<n; i++)
+    h->Fill(x_pdf[i]);
+
+  TCanvas *c1 = new TCanvas("c1", "c1");
+  c1->cd();
+  h->Draw();
 
 }
